@@ -179,7 +179,6 @@ class SocialMediaOnboardingView(GenericAPIView):
             "is_onboarding_complete": profile.is_onboarding_complete,
         })
 
-
 class LogoUploadView(GenericAPIView):
     serializer_class = LogoUploadSerializer
     permission_classes = [IsAuthenticated, IsApprovedPartner]
@@ -195,7 +194,6 @@ class LogoUploadView(GenericAPIView):
             "message": "Logo uploaded successfully.",
             "logo": str(profile.logo)
         })
-
 
 # ─────────────────────────────
 # PROFILE

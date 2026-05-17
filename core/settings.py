@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     # Third-party Packages
     'rest_framework',
     'corsheaders',
+    "drf_spectacular",
+    "drf_spectacular_sidecar",
 
     # Local Project Apps (Modular Architecture)
     'apps.users',
@@ -98,7 +100,18 @@ REST_FRAMEWORK = {
     ],
 }
 
+#extra add ...
 
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Kanzen Labs API",
+    "DESCRIPTION": "AI-powered cosmetic platform APIs",
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+}
 # ──────────────────────────────────────────────────────────────────────
 # DATABASE CONFIGURATION
 # ──────────────────────────────────────────────────────────────────────

@@ -242,10 +242,42 @@ class ProfileReadSerializer(serializers.ModelSerializer):
 
 
 class ProfileUpdateSerializer(serializers.ModelSerializer):
+    # Nested serializers to handle brand details and social media updates seamlessly
+    details = BrandDetailsSerializer(required=False)
+    social = SocialMediaSerializer(required=False)
+
     class Meta:
         model = PartnerProfile
-        fields = ["brand_name", "brand_tagline", "about_brand", "logo", "cover_image"]
+        fields = [
+            "brand_name", "brand_tagline", "about_brand", 
+            "logo", "cover_image", "details", "social"
+        ]
 
+    def update(self, instance, validated_data):
+        # Extract nested payloads from the validated dictionary
+        details_data = validated_data.pop("details", None)
+        social_data = validated_data.pop("social", None)
+
+        # Update core profile attributes
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+
+        # Handle nested BrandDetails model updates or instantiation
+        if details_data is not None:
+            details_obj, _ = BrandDetails.objects.get_or_create(profile=instance)
+            for attr, value in details_data.items():
+                setattr(details_obj, attr, value)
+            details_obj.save()
+
+        # Handle nested SocialMedia model updates or instantiation
+        if social_data is not None:
+            social_obj, _ = SocialMedia.objects.get_or_create(profile=instance)
+            for attr, value in social_data.items():
+                setattr(social_obj, attr, value)
+            social_obj.save()
+
+        return instance
 
 class DeleteAccountSerializer(serializers.Serializer):
     password = serializers.CharField(write_only=True)

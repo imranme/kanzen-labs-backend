@@ -94,17 +94,11 @@ AUTH_USER_MODEL = 'users.User'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-        # 'rest_framework.authentication.SessionAuthentication', # Comment this out for now
     ),
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
     ],
-}
-
-#extra add ...
-
-REST_FRAMEWORK = {
-    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 
@@ -170,3 +164,17 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_USE_TLS = True
 # EMAIL_HOST_USER = 'your-email@gmail.com'
 # EMAIL_HOST_PASSWORD = 'your-app-password'
+
+
+# settings.py
+CORS_ALLOW_HEADERS = [
+    "accept",
+    "accept-encoding",
+    "authorization", # এই লাইনটি থাকা বাধ্যতামূলক
+    "content-type",
+    "dnt",
+    "origin",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+]

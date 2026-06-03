@@ -112,12 +112,66 @@ class ResetPasswordView(GenericAPIView):
         return Response({"message": "Password reset successful."}, status=status.HTTP_200_OK)
 
 
-# ──────────────────────────────────────────────────
-# 2. ONBOARDING SECTION (Dynamic Handler)
-# ──────────────────────────────────────────────────
+# # ──────────────────────────────────────────────────
+# # 2. ONBOARDING SECTION (Dynamic Handler)
+# # ──────────────────────────────────────────────────
+
+# class OnboardingStatusView(APIView):
+#     permission_classes = [IsAuthenticated, ]
+
+#     def get(self, request):
+#         profile = request.user.profile
+#         return Response({
+#             "onboarding_step": profile.onboarding_step,
+#             "is_onboarding_complete": profile.is_onboarding_complete,
+#             "brand_name": profile.brand_name,
+#         })
+
+
+# class BrandOnboardingView(GenericAPIView):
+#     """
+#     Handles Step 1 to 4 of the onboarding flow based on the 'step' parameter.
+#     """
+#     permission_classes = [IsAuthenticated,]
+#     parser_classes = [MultiPartParser, FormParser, JSONParser]
+    
+#     def get_object(self):
+#         return self.request.user.profile
+
+#     def get_serializer_class(self):
+#         step = str(self.request.data.get('step', '1'))
+#         if step == '1': return LogoUploadSerializer
+#         elif step == '2': return BrandIdentitySerializer
+#         elif step == '3': return BrandDetailsUpdateSerializer
+#         elif step == '4': return SocialMediaUpdateSerializer
+#         return LogoUploadSerializer
+
+#     def post(self, request, *args, **kwargs):
+#         return self.put(request, *args, **kwargs)
+
+#     def put(self, request, *args, **kwargs):
+#         profile = self.get_object()
+#         serializer = self.get_serializer(profile, data=request.data, partial=True)
+#         serializer.is_valid(raise_exception=True)
+#         serializer.save()
+
+#         return Response({
+#             "message": f"Step {request.data.get('step', '1')} completed.",
+#             "onboarding_step": profile.onboarding_step,
+#             "is_onboarding_complete": profile.is_onboarding_complete,
+#         })
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# 2. ONBOARDING SECTION
+# ─────────────────────────────────────────────────────────────────────────────
 
 class OnboardingStatusView(APIView):
-    permission_classes = [IsAuthenticated, ]
+    """
+    Retrieves the active user's current onboarding progress and completion status.
+    Essential for client-side navigation logic.
+    """
+    permission_classes = [IsAuthenticated]
 
     def get(self, request):
         profile = request.user.profile
@@ -130,20 +184,29 @@ class OnboardingStatusView(APIView):
 
 class BrandOnboardingView(GenericAPIView):
     """
-    Handles Step 1 to 4 of the onboarding flow based on the 'step' parameter.
+    Unified ingestion endpoint for all onboarding sequences. Switches serializers
+    dynamically based on the incoming request context.
     """
-    permission_classes = [IsAuthenticated,]
+    permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser, JSONParser]
     
     def get_object(self):
         return self.request.user.profile
 
     def get_serializer_class(self):
-        step = str(self.request.data.get('step', '1'))
-        if step == '1': return LogoUploadSerializer
-        elif step == '2': return BrandIdentitySerializer
-        elif step == '3': return BrandDetailsUpdateSerializer
-        elif step == '4': return SocialMediaUpdateSerializer
+        # Extract the step configuration from raw dictionary or multipart attributes
+        raw_step = self.request.data.get('step') or self.request.data.get('step-1')
+        step = str(raw_step).replace('step-', '').strip() if raw_step else '1'
+        
+        if step == '1': 
+            return LogoUploadSerializer
+        elif step == '2': 
+            return BrandIdentitySerializer
+        elif step == '3': 
+            return BrandDetailsUpdateSerializer
+        elif step == '4': 
+            return SocialMediaUpdateSerializer
+            
         return LogoUploadSerializer
 
     def post(self, request, *args, **kwargs):
@@ -151,23 +214,50 @@ class BrandOnboardingView(GenericAPIView):
 
     def put(self, request, *args, **kwargs):
         profile = self.get_object()
+        
+        # Robust parsing capable of processing both 'step': 1 or 'step-1': '' formats
+        raw_step = request.data.get('step') or request.data.get('step-1')
+        try:
+            if raw_step and 'step-' in str(raw_step):
+                current_step = int(str(raw_step).replace('step-', ''))
+            elif raw_step:
+                current_step = int(raw_step)
+            else:
+                # If key itself is 'step-1' with no value, parse the key name
+                step_key = [k for k in request.data.keys() if 'step-' in k]
+                current_step = int(step_key[0].replace('step-', '')) if step_key else 1
+        except (ValueError, IndexError):
+            current_step = 1
+
         serializer = self.get_serializer(profile, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
+        # Update step state workflow
+        if current_step >= profile.onboarding_step and profile.onboarding_step < 4:
+            profile.onboarding_step = current_step + 1
+        
+        if current_step == 4:
+            profile.onboarding_step = 4
+            
+        profile.save()
+        profile.refresh_from_db()
+
         return Response({
-            "message": f"Step {request.data.get('step', '1')} completed.",
+            "message": f"Step {current_step} completed.",
             "onboarding_step": profile.onboarding_step,
             "is_onboarding_complete": profile.is_onboarding_complete,
-        })
-
+        }, status=status.HTTP_200_OK)
 
 # ──────────────────────────────────────────────────
 # 3. PROFILE MANAGEMENT SECTION
 # ──────────────────────────────────────────────────
 
 class ProfileView(APIView):
-    permission_classes = [IsAuthenticated, ]
+    """
+    Handles reading and updating partner profiles including nested relation attributes.
+    """
+    permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser, JSONParser]
 
     def get(self, request):
@@ -183,7 +273,15 @@ class ProfileView(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        read_serializer = ProfileReadSerializer(profile, context={"request": request})
+        # Clear Django's internal relation cache to avoid returning stale/cached nested data
+        if hasattr(profile, '_details_cache'): del profile._details_cache
+        if hasattr(profile, '_social_cache'): del profile._social_cache
+
+        # Fetch a completely fresh instance from the database with updated nested relations
+        fresh_profile = PartnerProfile.objects.get(pk=profile.pk)
+
+        # Serialize using the completely clean data snapshot
+        read_serializer = ProfileReadSerializer(fresh_profile, context={"request": request})
         return Response(read_serializer.data, status=status.HTTP_200_OK)
 
 

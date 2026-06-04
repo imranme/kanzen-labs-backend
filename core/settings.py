@@ -45,7 +45,7 @@ INSTALLED_APPS = [
 
     # Local Project Apps (Modular Architecture)
     'apps.users',
-    # 'apps.products',
+    'apps.products',
     # 'apps.compliance',
     # 'apps.ai_engine',
     # 'apps.logistics',

@@ -1,3 +1,4 @@
+from django.db import transaction  # 👈 ট্রানজেকশন সেফ রাখার জন্য যোগ করা হয়েছে
 from django.db.models import Count, Avg, Q
 from rest_framework import generics, status
 from rest_framework.views import APIView
@@ -58,7 +59,7 @@ class ProductListCreateView(generics.ListCreateAPIView):
 class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
     """
     Handles retrieving full item specs, editing attributes, or deleting a product.
-    Figma: Product Details modal & Edit Product modal.
+    Figma: Product Details modal, Edit Product modal + Wizard Step 2 All-in-One Data Update.
     """
     permission_classes = [IsAuthenticated]
     parser_classes = [MultiPartParser, FormParser, JSONParser]
@@ -72,9 +73,23 @@ class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
         brand = self.request.user.profile
         return Product.objects.filter(brand=brand).prefetch_related('batches')
 
+    # 🔗 এখানে Step 2-এর অল-ইন-ওয়ান ডেটা (Product Update + Batch Create) মার্জ করা হয়েছে
+    def perform_update(self, serializer):
+        with transaction.atomic():  # ডেটাবেজ সেফটি নিশ্চিত করার জন্য
+            # ১. প্রথমে প্রোডাক্টের নিজস্ব ডেটা (ক্যাটাগরি, সাইজ, রিটেইল প্রাইস) সেভ হবে
+            product = serializer.save()
+            
+            # ২. রিকোয়েস্ট বডিতে "batch" অবজেক্ট আছে কিনা চেক করবে
+            batch_data = self.request.data.get("batch")
+            if batch_data:
+                # ব্যাচ ক্রিয়েট সিরিয়ালাইজারে প্রোডাক্টের ইনস্ট্যান্স পাস করে ডেটা সেভ করা হচ্ছে
+                batch_serializer = BatchRecordCreateSerializer(data=batch_data)
+                batch_serializer.is_valid(raise_exception=True)
+                batch_serializer.save(product=product)
+
 
 # ─────────────────────────────────────────────────────────────────────────────
-# 2. BATCH MANAGEMENT VIEWS (Upload Wizard Step 2)
+# 2. BATCH MANAGEMENT VIEWS (Upload Wizard Step 2 / Standalone Add Batch)
 # ─────────────────────────────────────────────────────────────────────────────
 
 class BatchCreateView(generics.CreateAPIView):

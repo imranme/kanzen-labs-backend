@@ -1,0 +1,84 @@
+**COMMERCIAL INVOICE**
+
+**Invoice Number:** KLA-EXP-2023-1104
+**Invoice Date:** 26 October 2023
+
+---
+
+**1. Exporter / Seller:**
+Kanzen Labs Alpha
+123 Innovation Drive
+London, W1A 1AA
+United Kingdom
+**Tel:** +44 20 7946 0123
+**Email:** exports@kanzenlabs.co.uk
+**GB EORI No:** GB123456789000
+**VAT Reg. No:** GB 123 4567 89
+
+**2. Consignee / Buyer:**
+[Consignee Name — EU (Intra-EU)]
+[Consignee Address — EU (Intra-EU)]
+**Tel:** [Consignee Phone Number]
+**Email:** [Consignee Email Address]
+**EORI No:** [Consignee EU EORI Number]
+**VAT Reg. No:** [Consignee EU VAT Number]
+
+---
+
+**3. Shipment & Payment Details:**
+**Terms of Sale (Incoterms 2020):** DAP [Consignee's City, Country]
+**Terms of Payment:** Net 30 Days via Telegraphic Transfer (T/T)
+**Currency:** GBP (£ - Pound Sterling)
+**Reason for Export:** Commercial Sale
+**Country of Origin:** United Kingdom (UK)
+
+---
+
+**4. Shipping Information:**
+**Air Waybill / Bill of Lading No:** [To Be Advised]
+**Vessel / Flight No:** [To Be Advised]
+**Port of Loading:** London Heathrow (LHR), UK
+**Port of Discharge:** [Destination Airport/Port, Country]
+**Final Destination:** [Consignee Address — EU (Intra-EU)]
+
+---
+
+**5. Package & Weight Details:**
+**Total No. of Packages:** 10 Cartons
+**Total Gross Weight:** 110.00 KGS
+**Total Net Weight:** 100.00 KGS
+**Shipping Marks:**
+KANZEN LABS
+C/NO: 1-10
+MADE IN UK
+
+---
+
+**6. Product Details:**
+
+| Description of Goods                                                                                             | HS Code      | Quantity | Unit Price (£) | Total Amount (£) |
+| ---------------------------------------------------------------------------------------------------------------- | ------------ | -------- | -------------- | ---------------- |
+| **Hyaluronic Acid Hydration Serum**                                                                              |              |          |                |                  |
+| Cosmetic skincare product for topical application.                                                               | 3304.99.00   | 1,000    | £45.00         | £45,000.00       |
+| Format: 30ml Glass Bottle                                                                                        |              | Units    |                |                  |
+| SKU / Batch Code: HYA-SRM-302                                                                                    |              |          |                |                  |
+|                                                                                                                  |              |          |                |                  |
+| **SUBTOTAL**                                                                                                     |              |          |                | **£45,000.00**   |
+| **Freight & Insurance**                                                                                          |              |          |                | **Included**     |
+| **TOTAL INVOICE VALUE**                                                                                          |              |          |                | **£45,000.00**   |
+
+**Total Amount in Words:** Forty-Five Thousand Pound Sterling
+
+---
+
+**7. Declaration:**
+
+We, Kanzen Labs Alpha, hereby declare that the information contained in this invoice is true and correct to the best of our knowledge. The goods specified above are of United Kingdom (UK) origin and are being exported in accordance with EU Regulation (EU) No 952/2013 (Union Customs Code).
+
+We further certify that the products listed comply with the requirements of Regulation (EC) No 1223/2009 of the European Parliament and of the Council on cosmetic products.
+
+For and on behalf of Kanzen Labs Alpha
+
+_________________________
+**[Your Name]**
+**Export Compliance Manager**

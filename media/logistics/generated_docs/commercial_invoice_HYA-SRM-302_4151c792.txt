@@ -1,0 +1,77 @@
+**COMMERCIAL INVOICE**
+
+**Invoice Number:** INV-2024-7851
+**Invoice Date:** 23 May 2024
+
+---
+
+**1. Exporter / Seller:**
+Kanzen Labs Alpha
+123 Innovation Drive
+London, W1A 1AA
+United Kingdom
+**GB EORI No:** GB123456789000
+**VAT No:** GB 123 4567 89
+
+**2. Consignee / Importer of Record:**
+[Consignee Name — EU (Intra-EU)]
+[Consignee Address — EU (Intra-EU)]
+**EORI No:** [Consignee's EU EORI Number]
+**VAT No:** [Consignee's EU VAT Number]
+
+**3. Notify Party / Ship To Address (if different):**
+As Consignee
+
+---
+
+**4. Shipment Details:**
+**Air Waybill / Bill of Lading No:** [To be advised]
+**Vessel / Flight No:** [To be advised]
+**Port of Loading:** London Gateway (GBLGP)
+**Port of Discharge:** [e.g., Hamburg (DEHAM)]
+**Final Destination:** [Consignee Address — EU (Intra-EU)]
+
+---
+
+**5. Commercial Terms:**
+**Incoterms® 2020:** DAP [Consignee Address — EU (Intra-EU)]
+**Terms of Payment:** T/T 30 Days from Invoice Date
+**Currency:** GBP (Pound Sterling)
+**Reason for Export:** Commercial Sale / Permanent Export
+
+---
+
+| Marks & Numbers                               | No. of Packages | Description of Goods                                                                                             | Harmonized System (HS) Code | Quantity (Units) | Unit Price (GBP) | Total Amount (GBP) |
+| --------------------------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------- | --------------------------- | ---------------- | ---------------- | ------------------ |
+| KANZEN LABS                                   | 20 Cartons      | **Hyaluronic Acid Hydration Serum**                                                                              | 3304.99.00                  | 1000             | £45.00           | £45,000.00         |
+| [CONSIGNEE NAME]                              |                 | SKU / Batch Code: HYA-SRM-302                                                                                    |                             |                  |                  |                    |
+| C/NO. 1-20                                    |                 | Cosmetic preparations for skin care, not containing medicinal substances.                                        |                             |                  |                  |                    |
+|                                               |                 | **Country of Origin: United Kingdom (GB)**                                                                       |                             |                  |                  |                    |
+|                                               |                 |                                                                                                                  |                             |                  |                  |                    |
+| **Totals**                                    | **20 Cartons**  |                                                                                                                  |                             | **1000**         |                  | **£45,000.00**     |
+
+---
+
+**Total Net Weight:** [e.g., 150.00 KGS]
+**Total Gross Weight:** [e.g., 165.00 KGS]
+**Total Packages:** Twenty (20) Cartons
+
+**Subtotal:** £45,000.00
+**Freight & Insurance:** As per Incoterms
+**TOTAL INVOICE VALUE:** **£45,000.00**
+
+---
+
+**Declaration:**
+
+We hereby certify that the information contained in this invoice is true and correct and that the contents of this shipment are as stated above. The goods described are of United Kingdom (GB) origin and meet the rules of origin under the EU-UK Trade and Cooperation Agreement.
+
+The exporter of the products covered by this document (Exporter Reference No GB123456789000) declares that, except where otherwise clearly indicated, these products are of United Kingdom preferential origin.
+
+This transaction is conducted in accordance with the Union Customs Code (EU Regulation No 952/2013). The products comply with the requirements of Regulation (EC) No 1223/2009 on cosmetic products.
+
+**For and on behalf of Kanzen Labs Alpha**
+
+_________________________
+**Name:** [Authorized Signatory Name]
+**Title:** Head of Compliance & Logistics

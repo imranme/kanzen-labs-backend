@@ -1,6 +1,9 @@
 from django.apps import AppConfig
 
-
 class ComplianceConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'compliance'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "apps.compliance"
+    label = "compliance"
+
+    def ready(self):
+        import apps.compliance.signals  # noqa

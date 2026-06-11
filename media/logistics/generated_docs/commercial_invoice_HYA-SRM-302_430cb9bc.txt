@@ -1,0 +1,78 @@
+**COMMERCIAL INVOICE**
+
+**1. Invoice Number:** KLA-INV-2024-071
+**2. Invoice Date:** 23 May 2024
+**3. Order Number:** PO-56789
+
+---
+
+**4. Shipper / Seller / Exporter:**
+Kanzen Labs Alpha
+123 Innovation Drive
+London, W1A 1AA
+United Kingdom
+**GB EORI No:** GB123456789000
+**VAT No:** GB 123 4567 89
+
+**5. Consignee / Buyer / Importer:**
+[Consignee Name — EU (Intra-EU)]
+[Consignee Address — EU (Intra-EU)]
+**EORI No:** [Consignee EORI Number]
+**VAT No:** [Consignee VAT Number]
+
+**6. Notify Party (if different from Consignee):**
+Same as Consignee
+
+---
+
+**7. Shipment Details:**
+**Incoterms 2020:** DAP [Consignee Address — EU (Intra-EU)]
+**Terms of Payment:** T/T 30 days from invoice date
+**Country of Origin:** United Kingdom (GB)
+**Country of Final Destination:** [EU Member State]
+**Reason for Export:** Commercial Sale / Permanent Export
+**Currency:** Great British Pound (GBP)
+
+---
+
+**8. Product & Shipping Information:**
+
+| Marks & Numbers | No. of Packages | Description of Goods | HS Code | Quantity (Units) | Unit Price (£) | Total Value (£) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| KLA / [DESTINATION CITY] | 10 Cartons | **Hyaluronic Acid Hydration Serum (30ml)** | 3304.99.00 | 1,000 | 45.00 | 45,000.00 |
+| C/NO. 1-10 | | Cosmetic Skincare Preparation | | | | |
+| | | SKU / Batch Code: HYA-SRM-302 | | | | |
+| | | | | | | |
+| **Totals** | **10 Cartons** | | | **1,000** | | **£45,000.00** |
+
+---
+
+**9. Value Summary:**
+**Subtotal:** £45,000.00
+**Freight & Insurance:** Included as per DAP Incoterms
+**Total Invoice Value:** **£45,000.00**
+**Total Amount in Words:** Forty-Five Thousand Great British Pounds
+
+---
+
+**10. Bank Details for T/T Payment:**
+**Bank Name:** [Bank Name]
+**Bank Address:** [Bank Address]
+**Account Name:** Kanzen Labs Alpha
+**Account Number:** [Account Number]
+**IBAN:** [IBAN Number]
+**SWIFT / BIC:** [SWIFT/BIC Code]
+
+---
+
+**11. Declaration:**
+We hereby declare that the information contained in this invoice is true and correct and that the contents of this shipment are of United Kingdom (GB) origin. The goods described are in conformity with the order placed and are being exported in accordance with the regulations of the destination country and the Union Customs Code (EU Regulation No 952/2013).
+
+These goods are cosmetic products and are not subject to any export restrictions.
+
+For and on behalf of Kanzen Labs Alpha
+
+_________________________________
+**Authorized Signature**
+**Name:** [Signatory Name]
+**Title:** Export Manager

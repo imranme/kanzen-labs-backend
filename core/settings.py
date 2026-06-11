@@ -48,10 +48,9 @@ INSTALLED_APPS = [
     'apps.products',
     'apps.compliance',
     'apps.logistics',
-    # 'apps.ai_engine',
-    # 'apps.logistics',
+    'apps.ai_engine',
     # 'apps.meetings',
-    # 'apps.growth',
+    'apps.growth',
 ]
 
 MIDDLEWARE = [

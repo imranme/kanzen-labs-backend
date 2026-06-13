@@ -99,7 +99,7 @@ Rules:
 """
 
     response = client.models.generate_content(
-        model="gemini-1.5-flash-latest",
+        model="gemini-2.5-pro",
         contents=[types.Content(role="user", parts=[types.Part(text=prompt)])],
         config=types.GenerateContentConfig(
             system_instruction=SYSTEM_PROMPT,

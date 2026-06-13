@@ -36,7 +36,7 @@ class MarginCalculation(models.Model):
     created_at       = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        app_label = "growth"  # 👈 'apps.growth' বদলে শুধু 'growth' করা হলো ভাই
+        app_label = "growth"  
         db_table  = "growth_margin_calculation"
         ordering  = ["-created_at"]
 
@@ -71,7 +71,7 @@ class COGSimulation(models.Model):
     created_at      = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        app_label = "growth"  # 👈 জ্যাঙ্গো ট্র্যাকিং সলিড করার জন্য ফিক্স করা হলো
+        app_label = "growth" 
         db_table  = "growth_cog_simulation"
         ordering  = ["-created_at"]
 
@@ -110,7 +110,7 @@ class SavedFormulation(models.Model):
     created_at      = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        app_label = "growth"  # 👈 ডুপ্লিকেট কেটে একদম ক্লিন ফিক্সড ভাই
+        app_label = "growth"  
         db_table  = "growth_saved_formulation"
         ordering  = ["-created_at"]
 

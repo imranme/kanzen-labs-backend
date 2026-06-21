@@ -1,4 +1,5 @@
 from django.urls import path
+# from .views import DashboardSummaryView 
 from apps.growth.views import (
     # Margin
     MarginCalculateView,
@@ -13,6 +14,7 @@ from apps.growth.views import (
     FormulationSaveView,
     SavedFormulationListView,
     SavedFormulationDetailView,
+    DashboardSummaryView,
 )
 
 # Mounted at: /api/v1/growth/
@@ -34,4 +36,7 @@ urlpatterns = [
     path("formulation/save/",               FormulationSaveView.as_view(),        name="growth-formulation-save"),
     path("formulation/saved/",              SavedFormulationListView.as_view(),   name="growth-formulation-saved"),
     path("formulation/<uuid:pk>/",          SavedFormulationDetailView.as_view(), name="growth-formulation-detail"),
+
+    # ── Dashboard Summary ─────────────────────────────────
+    path("dashboard/", DashboardSummaryView.as_view(), name="dashboard"),
 ]

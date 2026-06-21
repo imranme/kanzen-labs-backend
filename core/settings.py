@@ -29,6 +29,8 @@ ALLOWED_HOSTS = ['*']
 # ──────────────────────────────────────────────────────────────────────
 
 INSTALLED_APPS = [
+    "unfold", 
+    "unfold.contrib.filters",
     # Default Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -178,3 +180,89 @@ CORS_ALLOW_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
 ]
+
+
+
+UNFOLD_MAIN_SETTINGS = {
+    "SITE_TITLE": "Kanzen Labs Administration",
+    "SITE_HEADER": "Kanzen Labs Admin",
+    "SITE_SYMBOL": "bi-beauty", # বুটস্ট্র্যাপ আইকন বা কাস্টম সিম্বল
+    "SHOW_HISTORY": True,
+    "SHOW_VIEW_ON_SITE": True,
+    
+    # ── সাইডবার নেভিগেশন গ্রুপিং ──────────────────────────────
+    "SIDEBAR": {
+        "show_search": True,
+        "navigation": [
+            {
+                "title": "User Management",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Users",
+                        "icon": "people",
+                        "link": "admin:users_user_changelist",
+                    },
+                    {
+                        "title": "Partner Profiles",
+                        "icon": "badge_status",
+                        "link": "admin:users_partnerprofile_changelist",
+                    },
+                ],
+            },
+            {
+                "title": "Products & Logistics",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Products",
+                        "icon": "inventory_2",
+                        "link": "admin:products_product_changelist",
+                    },
+                    {
+                        "title": "Batch Records",
+                        "icon": "layers",
+                        "link": "admin:products_batchrecord_changelist",
+                    },
+                    {
+                        "title": "Logistics Docs",
+                        "icon": "description",
+                        "link": "admin:logistics_generatedlogisticdoc_changelist",
+                    },
+                ],
+            },
+            {
+                "title": "Growth & AI Analytics",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Chemist Chats",
+                        "icon": "chat",
+                        "link": "admin:ai_engine_chemistchatsession_changelist",
+                    },
+                    {
+                        "title": "Margin Calculations",
+                        "icon": "payments",
+                        "link": "admin:growth_margincalculation_changelist",
+                    },
+                    {
+                        "title": "Forecast Records",
+                        "icon": "trending_up",
+                        "link": "admin:ai_engine_forecastrecord_changelist",
+                    },
+                ],
+            },
+            {
+                "title": "Compliance Safety",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Compliance Documents",
+                        "icon": "gavel",
+                        "link": "admin:compliance_compliancedocument_changelist",
+                    },
+                ],
+            },
+        ],
+    },
+}

@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from unfold.admin import ModelAdmin  # <── Unfold Import
 from apps.growth.models import MarginCalculation, COGSimulation, SavedFormulation
 
-
 @admin.register(MarginCalculation)
-class MarginCalculationAdmin(admin.ModelAdmin):
+class MarginCalculationAdmin(ModelAdmin):  # <── ModelAdmin
     list_display  = ("brand_name", "product_name", "margin_badge",
                      "profit_per_unit", "retail_price", "created_at")
     list_filter   = ("created_at",)
@@ -30,9 +30,8 @@ class MarginCalculationAdmin(admin.ModelAdmin):
         )
     margin_badge.short_description = "Margin"
 
-
 @admin.register(COGSimulation)
-class COGSimulationAdmin(admin.ModelAdmin):
+class COGSimulationAdmin(ModelAdmin):  # <── ModelAdmin
     list_display  = ("brand_name", "product_name", "base_cost",
                      "retail_price", "created_at")
     search_fields = ("brand__brand_name", "product__name")
@@ -46,9 +45,8 @@ class COGSimulationAdmin(admin.ModelAdmin):
         return obj.product.name if obj.product else "—"
     product_name.short_description = "Product"
 
-
 @admin.register(SavedFormulation)
-class SavedFormulationAdmin(admin.ModelAdmin):
+class SavedFormulationAdmin(ModelAdmin):  # <── ModelAdmin
     list_display  = ("formula_name", "brand_name", "product_format",
                      "skin_type", "concern", "created_at")
     list_filter   = ("product_format",)

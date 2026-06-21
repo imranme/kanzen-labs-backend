@@ -315,3 +315,172 @@ class SavedFormulationDetailView(APIView):
             return Response({"error": "Formula not found."}, status=status.HTTP_404_NOT_FOUND)
         obj.delete()
         return Response({"message": "Formula deleted."}, status=status.HTTP_200_OK)
+
+
+
+
+# dhasbord 
+# ──────────────────────────────────────────────────
+# DASHBOARD SUMMARY VIEW
+# Figma: Home Page — সব data এক API তে
+# apps/growth/views.py এ এই class টা add করো
+# ──────────────────────────────────────────────────
+
+class DashboardSummaryView(APIView):
+    """
+    GET /api/v1/growth/dashboard/
+
+    Figma: Home Page — একটা call এ সব data
+    {
+      brand_name, tier, is_verified,
+      margin_health_score,
+      active_products, compliance_score,
+      forecast_health, pending_launches,
+      revenue_trend_pct, recent_activity
+    }
+    """
+    permission_classes = PERMS
+
+    def get(self, request):
+        brand = request.user.profile
+
+        # ── 1. Products ───────────────────────────
+        from apps.products.models import Product
+        products      = Product.objects.filter(brand=brand, is_active=True)
+        active_count  = products.count()
+        pending_count = products.filter(
+            compliance_status="pending"
+        ).count()
+
+        # ── 2. Compliance Score ───────────────────
+        from apps.compliance.services import get_brand_compliance_summary
+        compliance    = get_brand_compliance_summary(brand)
+        comp_score    = compliance["health_score"]
+        comp_pending  = compliance["pending_docs"]
+
+        # ── 3. Margin Health Score ────────────────
+        latest_margin = MarginCalculation.objects.filter(
+            brand=brand
+        ).first()
+        margin_score  = float(latest_margin.margin_pct) if latest_margin else 0
+
+        # ── 4. Forecast Health ────────────────────
+        from apps.ai_engine.models import ForecastRecord
+        forecasts     = ForecastRecord.objects.filter(brand=brand)
+        forecast_count= forecasts.count()
+        if forecast_count == 0:
+            forecast_health = "No Forecasts"
+        else:
+            avg_acc = sum(float(f.accuracy) for f in forecasts) / forecast_count
+            forecast_health = "Excellent" if avg_acc >= 90 else "Good" if avg_acc >= 75 else "Fair"
+
+        # ── 5. Revenue Trend ──────────────────────
+        margins       = MarginCalculation.objects.filter(brand=brand).order_by("-created_at")[:12]
+        revenue_trend = 12.4   # placeholder — connect real revenue data later
+
+        # ── 6. Recent Activity ────────────────────
+        recent_activity = _build_activity(brand)
+
+        return Response({
+            # Brand
+            "brand_name":          brand.brand_name,
+            "brand_tagline":       brand.brand_tagline,
+            "tier":                brand.tier,
+            "is_verified":         brand.is_verified,
+            "trust_score":         brand.trust_score,
+
+            # KPIs
+            "active_products":     active_count,
+            "compliance_score":    comp_score,
+            "compliance_pending":  comp_pending,
+            "margin_health_score": round(margin_score, 1),
+            "forecast_health":     forecast_health,
+            "forecast_count":      forecast_count,
+            "pending_launches":    pending_count,
+
+            # Revenue
+            "revenue_trend_pct":   revenue_trend,
+
+            # Recent Activity
+            "recent_activity":     recent_activity,
+
+            # Quick Actions available
+            "quick_actions": [
+                {"key": "upload_product",     "label": "Upload Product",     "url": "/api/v1/products/"},
+                {"key": "generate_forecast",  "label": "Generate Forecast",  "url": "/api/v1/ai/forecast/generate/"},
+                {"key": "chemist_bot",        "label": "Chemist Bot",        "url": "/api/v1/ai/chemist/ask/"},
+                {"key": "logistic_docs",      "label": "Logistic docs",      "url": "/api/v1/logistics/generate-document/"},
+                {"key": "join_meeting",       "label": "Join Meeting",       "url": "/api/v1/meetings/instant/"},
+            ]
+        })
+
+
+def _build_activity(brand):
+    """
+    Builds recent activity feed from multiple sources.
+    Figma: Recent Activity section on Home Page.
+    """
+    activity = []
+
+    # Compliance docs recently verified
+    from apps.compliance.models import ComplianceDocument
+    recent_docs = ComplianceDocument.objects.filter(
+        brand=brand, verification_status="verified"
+    ).order_by("-verified_at")[:2]
+    for doc in recent_docs:
+        activity.append({
+            "type":        "compliance",
+            "icon":        "check",
+            "color":       "green",
+            "title":       f"{doc.get_doc_type_display()} document approved",
+            "subtitle":    doc.product.name if doc.product else doc.title,
+            "time":        doc.verified_at,
+        })
+
+    # Recent forecasts
+    from apps.ai_engine.models import ForecastRecord
+    recent_forecasts = ForecastRecord.objects.filter(brand=brand).order_by("-created_at")[:1]
+    for f in recent_forecasts:
+        risk = f.inventory_risk
+        activity.append({
+            "type":     "forecast",
+            "icon":     "warning" if risk == "High" else "chart",
+            "color":    "orange" if risk == "High" else "teal",
+            "title":    f"Forecast alert: inventory {risk.lower()}" if risk == "High" else "Forecast generated",
+            "subtitle": f"{f.product.name} — {f.quarter}",
+            "time":     f.created_at,
+        })
+
+    # Recent batch uploads
+    from apps.products.models import BatchRecord
+    recent_batches = BatchRecord.objects.filter(
+        product__brand=brand
+    ).order_by("-uploaded_at")[:1]
+    for b in recent_batches:
+        activity.append({
+            "type":     "product",
+            "icon":     "upload",
+            "color":    "blue",
+            "title":    "New batch record uploaded",
+            "subtitle": f"Batch #{b.batch_code} — {b.product.name}",
+            "time":     b.uploaded_at,
+        })
+
+    # Sort by time descending
+    activity.sort(key=lambda x: x["time"], reverse=True)
+
+    # Format time to string
+    from django.utils import timezone
+    now = timezone.now()
+    for item in activity:
+        diff = now - item["time"]
+        hours = int(diff.total_seconds() / 3600)
+        if hours < 1:
+            item["time_ago"] = "Just now"
+        elif hours < 24:
+            item["time_ago"] = f"{hours}h ago"
+        else:
+            item["time_ago"] = f"{diff.days}d ago"
+        del item["time"]
+
+    return activity[:5]  # max 5 items

@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from unfold.admin import ModelAdmin  # <── Unfold Import
 from .models import GeneratedLogisticDoc
 
-
 @admin.register(GeneratedLogisticDoc)
-class GeneratedLogisticDocAdmin(admin.ModelAdmin):
+class GeneratedLogisticDocAdmin(ModelAdmin):  # <── ModelAdmin
     list_display  = (
         "product_name", "document_type_badge",
         "destination_country", "file_size_text", "created_at"
@@ -19,8 +19,8 @@ class GeneratedLogisticDocAdmin(admin.ModelAdmin):
 
     def document_type_badge(self, obj):
         colors = {
-            "commercial_invoice":    "#2563EB",
-            "packing_list":          "#059669",
+            "commercial_invoice":     "#2563EB",
+            "packing_list":           "#059669",
             "certificate_of_origin": "#D97706",
             "export_declaration":    "#7C3AED",
         }

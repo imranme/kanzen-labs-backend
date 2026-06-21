@@ -1,12 +1,12 @@
 from django.contrib import admin
 from django.utils import timezone
 from django.utils.html import format_html
+from unfold.admin import ModelAdmin  # <── Unfold Import
 from .models import ComplianceDocument
 from .services import verify_document, reject_document
 
-
 @admin.register(ComplianceDocument)
-class ComplianceDocumentAdmin(admin.ModelAdmin):
+class ComplianceDocumentAdmin(ModelAdmin):  # <── ModelAdmin
     list_display  = (
         "title", "doc_type", "brand_name", "product_name",
         "status_badge", "verified_at", "uploaded_at"
@@ -52,5 +52,5 @@ class ComplianceDocumentAdmin(admin.ModelAdmin):
         count = 0
         for doc in queryset.filter(verification_status="pending"):
             reject_document(doc, request.user, reason="Rejected by admin")
-            count += 1
+            count += 1 
         self.message_user(request, f"{count} document(s) rejected.")

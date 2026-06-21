@@ -1,15 +1,16 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from unfold.admin import ModelAdmin, TabularInline  # <── Unfold Imports
 from .models import Product, BatchRecord
 
-class BatchRecordInline(admin.TabularInline):
+class BatchRecordInline(TabularInline):  # <── TabularInline
     model = BatchRecord
     extra = 1
     fields = ["batch_code", "quantity", "manufacturing_date", "expiry_date", "is_expired"]
     readonly_fields = ["is_expired"]
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(ModelAdmin):  # <── ModelAdmin
     list_display = [
         "display_image", "name", "sku_code", "brand", 
         "category", "retail_price", "compliance_status", 
@@ -27,6 +28,6 @@ class ProductAdmin(admin.ModelAdmin):
     display_image.short_description = "Img"
 
 @admin.register(BatchRecord)
-class BatchRecordAdmin(admin.ModelAdmin):
+class BatchRecordAdmin(ModelAdmin):  # <── ModelAdmin
     list_display = ["batch_code", "product", "quantity", "manufacturing_date", "expiry_date", "is_expired"]
     search_fields = ["batch_code", "product__name"]

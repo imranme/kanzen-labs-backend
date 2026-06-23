@@ -1,0 +1,54 @@
+**CERTIFICATE OF ORIGIN**
+
+Certificate No: LCCI-2024-89110
+
+**1. Exporter (Name, full address, country)**
+Gonna
+123 Beauty Lane
+London, W1A 1AA
+United Kingdom
+
+**2. Consignee (Name, full address, country)**
+[Consignee Name — USA]
+[Consignee Address — USA]
+United States of America
+
+**3. Country of Origin**
+United Kingdom
+
+**4. Transport Details**
+**Vessel / Flight No.:** To Be Advised
+**Port of Loading:** Port of Felixstowe, United Kingdom
+**Port of Discharge:** Port of New York/Newark, USA
+**Final Destination:** [Consignee Address — USA]
+
+**5. Remarks**
+Commercial Invoice No: INV-7563
+Total Value: $3,125.00 USD
+FDA Cosmetic Product Registration Number: F1123456
+
+**6. Item Number** | **Marks and Numbers of Packages** | **Number and Kind of Packages; Description of Goods** | **Origin Criterion** | **Gross Weight (kg)** | **Quantity & Unit Price**
+--- | --- | --- | --- | --- | ---
+1 | As per Invoice INV-7563 | **ONE (1) CARTON CONTAINING:**<br><br>**Product:** Gonna Cleanser<br>**SKU / Batch Code:** Gonna-63636<br>**HTSUS Code:** 3401.30.5000<br><br>Cosmetic preparations for washing the skin, in the form of liquid or cream, put up for retail sale. | Wholly Obtained and Produced in the United Kingdom. | 10.00 KGS | **Quantity:** 50 Units<br>**Unit Price:** $62.50 USD<br>**Total:** $3,125.00 USD
+
+**7. Declaration by the Exporter**
+The undersigned hereby declares that the above-mentioned goods are of United Kingdom origin and that the details and statements are correct.
+
+**Place and Date of Issue:** London, United Kingdom, 23 May 2024
+
+**Authorised Signatory:**
+_________________________
+Jane Doe
+Export Manager
+Gonna
+
+**8. Certification**
+It is hereby certified, on the basis of the control carried out, that the declaration by the exporter is correct.
+
+**Certifying Body:** London Chamber of Commerce and Industry
+
+**Stamp and Signature:**
+_________________________
+(Official Stamp and Authorised Signature)
+
+**Date:** 23 May 2024

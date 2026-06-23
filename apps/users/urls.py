@@ -31,7 +31,3 @@ urlpatterns = [
     path("profile/delete/",       DeleteAccountView.as_view()),
 ]
 
-# ─────────────────────────────────────────────────────────────────────────────
-# CONFIGURATION COMPLETE
-# All onboarding logic is handled dynamically via the /onboarding/ route.
-# ─────────────────────────────────────────────────────────────────────────────

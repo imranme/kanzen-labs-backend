@@ -1,0 +1,62 @@
+**COMMERCIAL INVOICE**
+
+**Exporter / Seller:**
+Gonna
+123 Industrial Road
+Dhaka 1212
+Bangladesh
+Tel: +880 2 5566 7788
+EORI No: N/A
+
+**Consignee / Buyer:**
+[Consignee Name — EU (Intra-EU)]
+[Consignee Address — EU (Intra-EU)]
+[City, Postal Code]
+[Country]
+Tel: [Consignee Phone Number]
+EORI No: [Consignee EORI Number - Mandatory for EU Imports]
+
+**Invoice No:** INV-GN-24-0751
+**Date:** 23 May 2024
+**Customer PO No:** [Customer Purchase Order Number]
+
+**Terms of Sale (Incoterms 2020):** DAP [Consignee's City, Country]
+**Terms of Payment:** T/T 30 Days from Invoice Date
+**Currency:** GBP (£)
+
+**Shipment Details:**
+**Country of Origin:** BANGLADESH
+**Final Destination:** [City, Country]
+**Vessel / Flight No:** TBC
+**Port of Loading:** Chittagong, Bangladesh
+**Port of Discharge:** [Port of Entry, EU]
+
+| Marks & Numbers | No. & Kind of Packages | Description of Goods | HS Code | Quantity (Units) | Unit Price (£) | Total Amount (£) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| [CONSIGNEE NAME] | 1 (ONE) CARTON | **Cosmetic Product: Gonna Cleanser** | 3401.30.00 | 50 | 50.00 | 2,500.00 |
+| [CITY, COUNTRY] | | SKU / Batch Code: Gonna-63636 | | | | |
+| C/NO. 1/1 | | Organic surface-active preparations for washing the skin, in liquid form, put up for retail sale. | | | | |
+| | | For cosmetic use only. | | | | |
+| | | | | | | |
+| | | | | **SUBTOTAL** | | **2,500.00** |
+| | | | | **FREIGHT & INSURANCE** | | **INCLUDED** |
+| | | | | **TOTAL INVOICE VALUE** | | **£2,500.00** |
+
+**Total Amount in Words:** Two Thousand Five Hundred Great British Pounds Only.
+
+**Bank Details for Wire Transfer:**
+**Bank Name:** [Exporter's Bank Name]
+**Bank Address:** [Exporter's Bank Address]
+**Account Name:** Gonna
+**Account Number:** [Account Number]
+**SWIFT/BIC Code:** [SWIFT Code]
+
+**Declaration:**
+We hereby certify that this invoice is true and correct and that the goods specified herein are of the origin of Bangladesh. The contents of this shipment are in full compliance with all applicable international trade regulations and the requirements under Regulation (EU) No 952/2013 (Union Customs Code).
+
+For and on behalf of Gonna
+
+_________________________
+(Authorized Signature)
+[Signatory Name]
+Export Manager

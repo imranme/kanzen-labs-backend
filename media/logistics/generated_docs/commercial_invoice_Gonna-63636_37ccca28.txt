@@ -1,0 +1,56 @@
+**COMMERCIAL INVOICE**
+
+**Exporter / Seller:**
+Gonna
+123 Industrial Avenue
+Tejgaon Industrial Area
+Dhaka 1208
+Bangladesh
+VAT/Tax ID: BD123456789
+
+**Invoice No:** INV-2024-0815
+**Invoice Date:** 20 May 2024
+**Order No:** PO-98765
+**Payment Terms:** Net 30 Days
+**Currency:** GBP (£)
+
+**Consignee / Buyer:**
+[Consignee Name — EU (Intra-EU)]
+[Consignee Address — EU (Intra-EU)]
+[City, Postal Code]
+[Country, EU]
+EORI No: [Consignee's EORI Number]
+VAT No: [Consignee's VAT Number]
+
+**Ship To (If different from Consignee):**
+Same as Consignee
+
+**Incoterms 2020:** DAP [Consignee's City, Country, EU]
+**Country of Origin:** Bangladesh
+**Reason for Export:** Commercial Sale
+
+---
+| Marks and Numbers | No. & Kind of Packages | Description of Goods | HS Code | Quantity (Units) | Unit Price (£) | Total Amount (£) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| [CONSIGNEE NAME] | 1 Carton | **Gonna Cleanser** | 3401.30.00 | 50 | 50.00 | 2,500.00 |
+| ORDER: PO-98765 | | Product Format: Cleanser for washing the skin, in liquid form, put up for retail sale. | | | | |
+| CTN 1 of 1 | | SKU / Batch Code: Gonna-63636 | | | | |
+| | | Country of Origin: Bangladesh | | | | |
+| | | | | | | |
+| | | | | **Subtotal:** | | **2,500.00** |
+| | | | | **Freight:** | | **INCLUDED** |
+| | | | | **Insurance:** | | **INCLUDED** |
+| | | | | **Total Invoice Value:** | | **£2,500.00** |
+---
+
+**Total Amount in Words:** Two Thousand Five Hundred British Pounds Sterling
+
+**Declaration:**
+We hereby certify that this invoice is true and correct and that the contents of this shipment are the product of Bangladesh. The goods described are in conformity with the order and are for import into the European Union under the provisions of Regulation (EU) No 952/2013 (Union Customs Code).
+
+**For and on behalf of Gonna**
+
+_________________________
+(Authorized Signature)
+[Signatory Name]
+Export Manager

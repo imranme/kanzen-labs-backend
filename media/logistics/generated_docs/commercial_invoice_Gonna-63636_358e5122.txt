@@ -1,0 +1,58 @@
+**COMMERCIAL INVOICE**
+
+**1. Exporter / Seller:**
+Gonna
+123 Industrial Road
+Dhaka, 1207
+Bangladesh
+VAT ID: BG 123456789
+EORI No: (Exporter EORI if applicable)
+
+**2. Consignee / Buyer:**
+[Consignee Name — EU (Intra-EU)]
+[Consignee Address — EU (Intra-EU)]
+[City, Postal Code]
+[EU Member State]
+VAT ID: [Consignee VAT ID]
+EORI No: [Consignee EORI Number]
+
+**3. Invoice No:** INV-2024-0815
+**4. Invoice Date:** 23 May 2024
+**5. Order No:** PO-98765
+**6. Terms of Payment:** T/T 30 Days
+**7. Incoterms® 2020:** DAP [Consignee City, EU Member State]
+**8. Currency:** Great British Pound (GBP)
+
+**9. Shipping Details:**
+**Carrier:** [Carrier Name e.g., DHL Express]
+**Air Waybill No:** [AWB Number]
+**Country of Origin:** Bangladesh
+**Country of Final Destination:** [EU Member State]
+**Port of Loading:** Dhaka (DAC), Bangladesh
+**Port of Discharge:** [Destination Airport/Port, EU]
+
+---
+
+| Marks & Numbers | No. of Packages | Description of Goods | HS Code | Quantity (Units) | Unit Price (£) | Total Amount (£) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| [Consignee Name] | 1 Carton | **Gonna Cleanser** | 3401.30.00 | 50 | 50.00 | 2,500.00 |
+| C/NO. 1/1 | | Product Format: Cleanser for washing the skin, in liquid form, put up for retail sale. | | | | |
+| | | SKU / Batch Code: Gonna-63636 | | | | |
+| | | | | | | |
+| | | **SUBTOTAL** | | | | **2,500.00** |
+| | | **FREIGHT & INSURANCE** | | | | **As per contract** |
+| | | **TOTAL INVOICE VALUE** | | | | **£2,500.00** |
+
+---
+
+**Total Amount in Words:** Two Thousand Five Hundred Pounds Sterling Only.
+
+**Declaration:**
+We hereby certify that this invoice is true and correct and that the contents of this shipment are the products of Bangladesh. The goods described are in conformity with the order and are for import into the European Union under the provisions of Regulation (EU) No 952/2013 (Union Customs Code).
+
+For and on behalf of Gonna
+
+_________________________
+(Authorized Signature)
+[Signatory Name]
+[Signatory Title]

@@ -1,0 +1,75 @@
+**COMMERCIAL INVOICE**
+
+**1. Exporter / Seller:**
+Gonna
+123 Industrial Road
+Tejgaon, Dhaka 1208
+Bangladesh
+VAT ID: BD123456789
+
+**2. Consignee / Importer of Record:**
+[Consignee Name — EU (Intra-EU)]
+[Consignee Address — EU (Intra-EU)]
+EORI No: [Consignee's EORI Number]
+VAT No: [Consignee's VAT Number]
+
+**Invoice No:** INV-2024-0815
+**Invoice Date:** 23 May 2024
+**Customer PO No:** PO-98765
+**EORI No (Exporter):** Not Applicable (Exporter is non-EU)
+
+**3. Notify Party (if different from Consignee):**
+Same as Consignee
+
+**4. Country of Origin:**
+Bangladesh
+
+**5. Terms of Sale (Incoterms 2020):**
+DAP [Consignee's City, EU Country]
+
+**6. Terms of Payment:**
+Net 30 Days from Invoice Date
+
+**7. Currency:**
+GBP (£)
+
+**8. Shipping Details:**
+**Port of Loading:** Chittagong, Bangladesh
+**Final Destination:** [Destination Port/Airport, EU Country]
+**Vessel / Flight No:** TBC
+**Air Waybill / Bill of Lading No:** TBC
+
+**9. Marks and Numbers:**
+[Consignee Name]
+Order No: PO-98765
+Carton 1 of 1
+Made in Bangladesh
+
+**10. Product Details:**
+
+| SKU / Batch Code | Description of Goods                                                              | HS Code    | Country of Origin | Quantity (Units) | Unit Price (£) | Total Amount (£) |
+| :--------------- | :-------------------------------------------------------------------------------- | :--------- | :---------------- | :--------------- | :------------- | :--------------- |
+| Gonna-63636      | Gonna Cleanser (Organic surface-active preparations for washing the skin, liquid) | 3401.30.00 | Bangladesh        | 50               | 50.00          | 2,500.00         |
+|                  |                                                                                   |            |                   |                  |                |                  |
+|                  |                                                                                   |            |                   | **Subtotal**     |                | **2,500.00**     |
+|                  |                                                                                   |            |                   | **Freight**      |                | **TBC**          |
+|                  |                                                                                   |            |                   | **Insurance**    |                | **TBC**          |
+|                  |                                                                                   |            |                   | **TOTAL**        |                | **2,500.00**     |
+
+**Total Amount in Words:** Two Thousand Five Hundred Great British Pounds
+
+**11. Package Information:**
+**Total Number of Packages:** 1 Carton
+**Total Gross Weight:** 10.50 KGS
+**Total Net Weight:** 8.00 KGS
+**Dimensions:** 40 x 30 x 25 CM
+
+**12. Declaration:**
+We hereby declare that the information contained in this invoice is true and correct and that the goods are of Bangladeshi origin. The transaction value represents the actual price paid or payable for the goods described. This invoice is issued in accordance with the provisions of Regulation (EU) No 952/2013 of the European Parliament and of the Council (Union Customs Code).
+
+For and on behalf of Gonna
+
+_________________________
+(Authorized Signatory)
+Name:
+Title: Export Manager

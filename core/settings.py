@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'apps.compliance',
     'apps.logistics',
     'apps.ai_engine',
+    'apps.meetings',
     'apps.growth',
 ]
 

@@ -1,0 +1,66 @@
+**COMMERCIAL INVOICE**
+
+**1. Exporter / Seller:**
+Gonna
+123 Industrial Road
+Dhaka 1212
+Bangladesh
+VAT ID: BG 123456789
+
+**2. Consignee / Importer of Record:**
+[Consignee Name — EU (Intra-EU)]
+[Consignee Address — EU (Intra-EU)]
+EORI No: [Consignee EORI Number]
+VAT No: [Consignee VAT Number]
+
+**3. Invoice Number:**
+INV-2024-0815
+
+**4. Invoice Date:**
+23 May 2024
+
+**5. Terms of Payment:**
+Net 30 Days from Invoice Date
+
+**6. Incoterms® 2020:**
+DAP [Consignee's City, Country]
+
+**7. Currency:**
+GBP (£)
+
+**8. Shipment Details:**
+Country of Origin: Bangladesh
+Reason for Export: Commercial Sale
+Port of Loading: Dhaka, Bangladesh (DAC)
+Final Destination: [City, Country of Consignee]
+Number of Packages: 1 Carton
+Gross Weight: 10.5 KG
+Net Weight: 9.0 KG
+Shipping Marks:
+GONNA
+[CONSIGNEE NAME]
+CTN 1 OF 1
+MADE IN BANGLADESH
+
+---
+
+| SKU / Batch Code | Product Description                                                                                             | HS Code      | Quantity (Units) | Unit Price (£) | Total Price (£) |
+| :--------------- | :-------------------------------------------------------------------------------------------------------------- | :----------- | :--------------- | :------------- | :-------------- |
+| Gonna-63636      | "Gonna" Brand Cleanser. Organic surface-active preparations for washing the skin, in liquid form, for retail sale. | 3401.30.00   | 50               | 50.00          | 2,500.00        |
+|                  |                                                                                                                 |              |                  |                |                 |
+|                  | **SUBTOTAL**                                                                                                    |              |                  |                | **2,500.00**    |
+|                  | **Freight & Insurance**                                                                                         |              |                  |                | **As per Incoterms** |
+|                  | **TOTAL INVOICE VALUE**                                                                                         |              |                  |                | **£2,500.00**   |
+
+---
+
+**Declaration:**
+
+We hereby declare that the information contained in this invoice is true and correct and that the goods are of Bangladeshi origin. The transaction is conducted in accordance with the provisions of the Union Customs Code (Regulation (EU) No 952/2013). These cosmetic products comply with Regulation (EC) No 1223/2009 of the European Parliament and of the Council on cosmetic products.
+
+For and on behalf of Gonna
+
+_________________________
+(Authorized Signature)
+[Name of Signatory]
+[Title of Signatory]

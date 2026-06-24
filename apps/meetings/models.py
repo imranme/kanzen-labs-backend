@@ -31,7 +31,7 @@ class Meeting(models.Model):
 
     @property
     def jitsi_meet_url(self):
-        jitsi_domain = getattr(settings, "JITSI_MEET_DOMAIN", "meet.jit.si")
+        jitsi_domain = getattr(settings, "JITSI_MEET_DOMAIN", "meet.ffmuc.net")
         return f"https://{jitsi_domain}/{self.jitsi_room_name}"
 
     def save(self, *args, **kwargs):
